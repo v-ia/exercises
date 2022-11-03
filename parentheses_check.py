@@ -15,10 +15,7 @@ def parentheses_check(str_to_check: str):
                         return False
                 except IndexError:
                     return False
-    if not open_brackets:
-        return True
-    else:
-        return False
+    return not open_brackets
 
 
 if __name__ == '__main__':
