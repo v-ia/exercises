@@ -7,7 +7,7 @@ def parentheses_check(str_to_check: str):
     parentheses = {'[': ']', '(': ')', '{': '}'}
     open_brackets = deque()
     for bracket in str_to_check:
-        if bracket in parentheses.keys() or bracket in parentheses.values():    # omission of not brackets
+        if bracket in parentheses or bracket in parentheses.values():    # omission of not brackets
             if bracket in parentheses.keys():
                 open_brackets.append(bracket)
             else:
