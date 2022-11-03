@@ -4,6 +4,7 @@ from collections import deque
 
 
 def parentheses_check(str_to_check: str):
+    parentheses = {'[': ']', '(': ')', '{': '}'}
     open_brackets = deque()
     for bracket in str_to_check:
         if bracket in parentheses.keys() or bracket in parentheses.values():    # omission of non brackets
@@ -19,7 +20,6 @@ def parentheses_check(str_to_check: str):
 
 
 if __name__ == '__main__':
-    parentheses = {'[': ']', '(': ')', '{': '}'}
     while True:
         try:
             print(parentheses_check(input()))
