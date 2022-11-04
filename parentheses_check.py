@@ -1,5 +1,4 @@
 # Task: https://ibb.co/3hJTZ5Y
-
 from collections import deque
 
 
