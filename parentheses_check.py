@@ -7,15 +7,14 @@ def parentheses_check(str_to_check: str):
     parentheses = {'[': ']', '(': ')', '{': '}'}
     open_brackets = deque()
     for bracket in str_to_check:
-        if bracket in parentheses or bracket in parentheses.values():    # omission of not brackets
-            if bracket in parentheses.keys():
-                open_brackets.append(bracket)
-            else:
-                try:
-                    if bracket != parentheses.get(open_brackets.pop()):
-                        return False
-                except IndexError:
+        if bracket in parentheses:
+            open_brackets.append(bracket)
+        elif bracket in parentheses.values():
+            try:
+                if bracket != parentheses.get(open_brackets.pop()):
                     return False
+            except IndexError:
+                return False
     return not open_brackets
 
 
